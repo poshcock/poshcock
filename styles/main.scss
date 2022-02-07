@@ -1,0 +1,196 @@
+// Variables
+@import "variables";
+
+// Elements
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: 1px;
+  @media screen and (min-width: 960px) {
+    font-size: 3em;
+  }
+}
+
+h3 {
+  font-size: 1.35em;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  @media screen and (min-width: 960px) {
+    font-size: 2em;
+  }
+}
+
+// Ids
+//// About
+@import "about";
+//// Contact
+@import "contact";
+//// Portfolio
+@import "portfolio";
+//// Services
+@import "services";
+
+// Classes
+.branded {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+  @media screen and (min-width: 960px) {
+    font-size: 4.5rem;
+  }
+}
+/* Center things in the center of circles */
+.circle {
+ align-items: center;
+ background-size: cover;
+ display: inline-flex;
+ justify-content: center;
+ z-index: 2;
+ background-color: white;
+ -webkit-mask-image: url("../images/circleWhite.svg");
+mask-image: url("../images/circleWhite.svg");
+ -webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+-webkit-mask-size: cover;
+mask-size: cover;
+}
+
+
+.close {
+  height: 60px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  z-index: 9999;
+  @media screen and (min-width: 960px) {
+    height: 80px;
+    right: 16px;
+    top: 16px;
+    width: 80px;
+  }
+}
+
+.col1 {
+   background-color: $color-one;
+   fill: $color-one;
+}
+
+.col2 {
+  background-color: $color-two;
+  fill: $color-two;
+}
+
+.col3 {
+  background-color: $color-three;
+  fill: $color-three;
+}
+
+.col4 {
+  background-color: $color-four;
+  fill: $color-four;
+}
+
+.col5 {
+  background-color: $color-five;
+  fill: $color-five;
+}
+
+.intermission {
+  box-sizing: border-box;
+  min-height: 100px;
+  min-width: 100%;
+  z-index: 1;
+
+  .stripe {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+
+  &.services {
+    .stripe {
+      min-height: 6vh;
+      &:nth-of-type(2n){
+        min-height: 9vh;
+      }
+      &:last-of-type {
+        min-height: 27vh;
+      }
+    }
+  }
+  &.porfolio {
+    .stripe {
+      min-height: 6vh;
+      min-width: 100%;
+      &:first-of-type {
+        content: "";
+        left: -1vw;
+        min-height: 9vw;
+        min-width: 102vw;
+        position: absolute;
+        top: -4.5vw;
+        transform: rotate(5deg);
+      }
+      &:nth-of-type(2) {
+        box-sizing: content-box;
+        padding-bottom: 6vw;
+      }
+    }
+  }
+}
+
+.nav-link {
+  opacity: 0;
+  visibility: hidden;
+
+  &.ready {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s;
+  }
+}
+
+.play {
+  align-items: center;
+  display: flex;
+  position: absolute;
+
+  input {
+    &[type="color"] {
+      border: 1px solid #000;
+      border-radius: 50%;
+      height: 40px;
+      margin-right: 3px;
+      width: 40px;
+      @media screen and (min-width: 960px) {
+        height: 40px;
+        width: 40px;
+      }
+    }
+    &::-webkit-color-swatch {
+      border-color: transparent;
+      border-radius: 50%;
+    }
+  }
+
+  span {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.section {
+  margin: 0 0 -1px 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
